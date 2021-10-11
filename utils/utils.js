@@ -1,6 +1,5 @@
 const axios = require("axios");
 const fs = require("fs");
-const map = new Map();
 
 module.exports = {
     splitIntoChunk: function (target, size) {
@@ -43,12 +42,4 @@ module.exports = {
             })
         })
     }
-}
-
-function testUniqueUrl(url) {
-    return axios.get(url).then(function (response) {
-        console.log("[" + response.status + "] " + url)
-    }).catch(function (error) {
-        console.log("[" + error + "] " + url)
-    })
 }
